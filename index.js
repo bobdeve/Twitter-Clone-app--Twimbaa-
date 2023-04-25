@@ -264,13 +264,13 @@ function render() {
     localStorage.setItem('tweetsxData', JSON.stringify(tweetssData));
     console.log(tweetsData)
 }
-setTimeout(function(){
+var timeoutId = setTimeout(function() {
+    // Reload the page
     location.reload();
-  }, 1000); // Reload page after 1 second
   
-  setTimeout(function(){
-    location.reload();
-  }, 2000); // Reload page after 2 seconds this hellow
+    // Clear the timeout after reloading the page
+    clearTimeout(timeoutId);
+  }, 1000);
 
 render();
 
