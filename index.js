@@ -270,7 +270,7 @@ var timeoutId = setTimeout(function() {
   
     // Clear the timeout after reloading the page
     clearTimeout(timeoutId);
-  }, 1000);
+  }, 111000);
 
 render();
 
