@@ -265,7 +265,13 @@ function render() {
     localStorage.setItem('tweetsxData', JSON.stringify(tweetssData));
     console.log(tweetsData)
 }
-// localStorage.setItem('myTweetData', JSON.stringify(tweetssData));
+setTimeout(function(){
+    location.reload();
+  }, 1000); // Reload page after 1 second
+  
+  setTimeout(function(){
+    location.reload();
+  }, 2000); // Reload page after 2 seconds this
 
 render();
-localStorage.setItem('tweetsxData', JSON.stringify(tweetssData));
+
