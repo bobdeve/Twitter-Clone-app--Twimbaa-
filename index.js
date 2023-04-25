@@ -7,8 +7,7 @@ import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 const tweetssData = JSON.parse(localStorage.getItem('tweetsxData'));
 localStorage.setItem('tweetsxData', JSON.stringify(tweetsData));
 
-console.log("My Data  >> "+tweetssData[0].likes)
-console.log(tweetssData)
+
 /*
 Challenge:
 3. We could improve index.js by moving one line
@@ -271,7 +270,7 @@ setTimeout(function(){
   
   setTimeout(function(){
     location.reload();
-  }, 2000); // Reload page after 2 seconds this
+  }, 2000); // Reload page after 2 seconds this hellow
 
 render();
 
