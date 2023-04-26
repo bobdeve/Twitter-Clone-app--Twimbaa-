@@ -263,7 +263,7 @@ function render() {
     document.getElementById("feed").innerHTML = getFeedHtml();
     localStorage.setItem('tweetsxData', JSON.stringify(tweetssData));
     console.log(tweetsData)
-    alert("If you don't see the tweet render please try to refresh the the page twice")
+    
 }
 var timeoutId = setTimeout(function() {
     // Reload the page
@@ -272,6 +272,6 @@ var timeoutId = setTimeout(function() {
     // Clear the timeout after reloading the page
     clearTimeout(timeoutId);
   }, 111000);
-
+  alert("If you don't see the tweet render please try to refresh the the page twice")
 render();
 
