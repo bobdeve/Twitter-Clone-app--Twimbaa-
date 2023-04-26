@@ -1,19 +1,14 @@
 import { tweetsData } from "./data.js";
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 
-// localStorage.setItem('tweetsxData', JSON.stringify(tweetsData));
+
 
 
 const tweetssData = JSON.parse(localStorage.getItem('tweetsxData'));
 localStorage.setItem('tweetsxData', JSON.stringify(tweetsData));
 
 
-/*
-Challenge:
-3. We could improve index.js by moving one line
-   of code to a better position. Find it and move it!
-*/
-// console.log(tweetsData);
+
 document.addEventListener("click", function (e) {
     if (e.target.dataset.like) {
         handleLikeClick(e.target.dataset.like);
@@ -25,11 +20,11 @@ document.addEventListener("click", function (e) {
         handleTweetBtnClick();
     }
     else if (e.target.dataset.delete){
-        // console.log(e.target.dataset.delete)
+       
         handleDeleteClick(e.target.dataset.delete);
     }
     else if (e.target.dataset.ownreply){
-        // console.log(e.target.dataset.ownreply)
+      
         handleOwnReplyClick(e.target.dataset.ownreply);
     }
 });
@@ -41,13 +36,13 @@ function handleLikeClick(tweetId) {
 
     if (targetTweetObj.isLiked) {
         targetTweetObj.likes--;
-        localStorage.setItem('tweetssData', JSON.stringify(tweetssData));
+       
     } else {
         targetTweetObj.likes++;
-        localStorage.setItem('tweetssData', JSON.stringify(tweetssData));
+        
     }
     targetTweetObj.isLiked = !targetTweetObj.isLiked;
-    localStorage.setItem('tweetssData', JSON.stringify(tweetssData));
+    
     render();
 }
 
@@ -66,11 +61,11 @@ function handleRetweetClick(tweetId) {
 }
 
 function  handleDeleteClick(deleteID){
-    // document.getElementById(`delete-${deleteID}`).classList.toggle("hidden"); 
+    
     const targetDeleteObj = tweetssData.filter(function(tweet){
         return tweet.uuid === deleteID;
     })[0];
-    // console.log(targetDeleteObj)
+   
       const indexx = tweetssData.indexOf(targetDeleteObj);
      
       tweetssData.splice(indexx, 1);
@@ -81,9 +76,6 @@ function handleReplyClick(replyId) {
     document.getElementById(`replies-${replyId}`).classList.toggle("hidden");
             
                 const input = document.querySelector(`input[name="${replyId}"]`);
-                
-             
-             console.log(input.value)
 
              
    
@@ -94,11 +86,7 @@ function handleReplyClick(replyId) {
 function handleTweetBtnClick() {
     const tweetInput = document.getElementById("tweet-input");
 
-    /*
-  Challenge:
-  1. No empty tweets!
-  2. Clear the textarea after tweeting!
-  */
+
     if (tweetInput.value) {
         tweetssData.unshift({
             handle: `@Scrimba`,
@@ -116,8 +104,6 @@ function handleTweetBtnClick() {
     }
 }
 function handleOwnReplyClick(tweetInput){
-    console.log("touched the reply icon")
-    
     const input = document.querySelector(`input[name="${tweetInput}"]`);
     const twitData =  {
         handle: `@Scrimba`,
@@ -252,7 +238,7 @@ function getFeedHtml() {
                             </div>   
                         </div>
                         `;
-                        localStorage.setItem('tweetsxData', JSON.stringify(tweetssData));
+                       
     });
     return feedHtml;
   
