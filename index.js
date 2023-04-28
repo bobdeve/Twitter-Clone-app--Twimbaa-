@@ -251,13 +251,7 @@ function render() {
     console.log(tweetsData)
     
 }
-var timeoutId = setTimeout(function() {
-    // Reload the page
-    location.reload();
-  
-    // Clear the timeout after reloading the page
-    clearTimeout(timeoutId);
-  }, 111000);
+
   alert("If you don't see the tweet render please try to refresh the the page twice")
 render();
 
